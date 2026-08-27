@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case File: Carlos Moreno — Salt Lake County Council District 2 | The Weber County Hive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #f4f0e6;
+    --color-card-bg: #fbf9f3;
+    --color-header-start: #5c1a2b;
+    --color-header-end: #3d0f1c;
+    --gradient-header: linear-gradient(135deg, var(--color-header-start), var(--color-header-end));
+    --color-link: #c0572e;
+    --color-stat: #d9a441;
+    --color-ink: #241c18;
+    --color-ink-soft: #5a4f47;
+    --color-border: #ddd3c2;
+    --font-headline: 'Playfair Display', serif;
+    --font-body: 'Source Serif 4', serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--color-bg); color: var(--color-ink); font-family: var(--font-body); font-size: 18px; line-height: 1.65; }
+  a { color: var(--color-link); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--color-link); outline-offset: 2px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  .header-band { background: var(--gradient-header); color: #f4ead9; padding: 14px 0; }
+  .header-band .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .brand { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #f4ead9; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+  .brand .dot { color: var(--color-stat); }
+  .header-band nav a { color: #e8d9c4; text-decoration: none; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; margin-left: 18px; }
+  .header-band nav a:hover { color: var(--color-stat); }
+
+  .case-hero { padding: 64px 0 40px; border-bottom: 1px solid var(--color-border); }
+  .kicker { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-link); display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .kicker::before { content: ""; width: 28px; height: 1px; background: var(--color-link); display: inline-block; }
+  .case-hero h1 { font-family: var(--font-headline); font-weight: 900; font-size: clamp(2.1rem, 5vw, 3.2rem); line-height: 1.08; margin: 0 0 20px; letter-spacing: -0.01em; }
+  .dek { font-size: 1.15rem; color: var(--color-ink-soft); max-width: 62ch; margin: 0; }
+  .case-meta { display: flex; gap: 28px; margin-top: 28px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12.5px; color: var(--color-ink-soft); text-transform: uppercase; letter-spacing: 0.04em; }
+  .case-meta span b { color: var(--color-ink); font-weight: 600; }
+
+  .verdict-box { background: var(--color-card-bg); border: 1px solid var(--color-border); border-left: 5px solid var(--color-header-start); border-radius: 3px; padding: 26px 30px; margin: 36px 0; }
+  .verdict-box .label { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-header-start); margin-bottom: 10px; display: block; }
+  .verdict-box p { margin: 0; font-size: 1.08rem; }
+  .verdict-box p + p { margin-top: 12px; }
+
+  .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--color-border); border: 1px solid var(--color-border); margin: 40px 0; }
+  .stat { background: var(--color-card-bg); padding: 22px 20px; }
+  .stat .num { font-family: var(--font-headline); font-weight: 900; font-size: 1.9rem; color: var(--color-stat); line-height: 1; display: block; margin-bottom: 8px; }
+  .stat .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-ink-soft); line-height: 1.4; }
+
+  section.sect { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+  section.sect:last-of-type { border-bottom: none; }
+  h2.sect-title { font-family: var(--font-headline); font-weight: 700; font-size: 1.75rem; margin: 0 0 22px; display: flex; align-items: baseline; gap: 12px; }
+  h2.sect-title .n { font-family: var(--font-mono); font-size: 0.9rem; color: var(--color-link); font-weight: 500; }
+  h3.sub-title { font-family: var(--font-headline); font-weight: 700; font-size: 1.25rem; margin: 32px 0 14px; }
+  .sect p { margin: 0 0 18px; }
+  .sect ul, .sect ol { margin: 0 0 18px; padding-left: 22px; }
+  .sect li { margin-bottom: 8px; }
+
+  .record-card { background: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: 3px; padding: 22px 24px; margin: 22px 0; }
+  .record-card .rc-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .record-card .rc-name { font-family: var(--font-headline); font-weight: 700; font-size: 1.1rem; }
+  .record-card .rc-amount { font-family: var(--font-mono); font-size: 1rem; color: var(--color-stat); font-weight: 600; }
+  .record-card p { margin: 0; font-size: 0.98rem; }
+  .record-card .rc-tag { display: inline-block; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-header-start); background: #efe2d3; padding: 3px 9px; border-radius: 2px; margin-top: 12px; margin-right: 6px; }
+
+  /* ---------- FUND DONUT ---------- */
+  .fund-donut-wrap { display: flex; align-items: center; gap: 28px; margin: 20px 0 32px; flex-wrap: wrap; }
+  .fund-donut { width: 160px; height: 160px; border-radius: 50%; flex-shrink: 0; position: relative; }
+  .fund-donut::after { content: ''; position: absolute; inset: 22px; border-radius: 50%; background: var(--color-bg); }
+  .fund-donut-center { position: absolute; inset: 22px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--color-ink-soft); text-align: center; line-height: 1.3; }
+  .fund-donut-legend { font-family: var(--font-mono); font-size: 13.5px; }
+  .fund-donut-legend-row { display: flex; align-items: baseline; gap: 9px; margin-bottom: 10px; }
+  .fund-donut-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; position: relative; top: 1px; }
+  .fund-donut-legend-amt { color: var(--color-ink); font-weight: 600; }
+  .fund-donut-legend-lbl { color: var(--color-ink-soft); }
+  .fund-donut-legend-sub { color: var(--color-ink-soft); font-size: 11.5px; margin-left: 21px; }
+
+  .flag-open { background: #fbf3e6; border: 1px dashed #c98a3f; border-radius: 3px; padding: 20px 24px; margin: 22px 0; }
+  .flag-open .fo-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #a5661f; display: block; margin-bottom: 8px; }
+  .flag-open p { margin: 0; }
+  .flag-open p + p { margin-top: 10px; }
+
+  /* ---------- BEGINNERS FLIP TILES ---------- */
+  .beginners-wrap { margin: 32px 0 0; }
+  .beginners-heading { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-header-start); margin-bottom: 6px; }
+  .beginners-sub { font-size: 0.92rem; color: var(--color-ink-soft); margin: 0 0 18px; }
+  .flip-grid { display: flex; flex-direction: column; gap: 14px; }
+  .flip-tile { perspective: 1000px; height: 92px; }
+  .flip-tile-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform 0.5s; transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  .flip-tile.flipped .flip-tile-inner { transform: rotateY(180deg); }
+  .flip-face {
+    position: absolute; inset: 0; backface-visibility: hidden;
+    border: 1px solid var(--color-border); border-radius: 4px;
+    padding: 0 24px; display: flex; align-items: center;
+  }
+  .flip-front {
+    background: var(--color-card-bg); border-left: 4px solid var(--color-header-start);
+    justify-content: space-between; gap: 16px;
+  }
+  .flip-front .term {
+    font-family: var(--font-headline); font-weight: 700; font-size: 1.08rem; color: var(--color-ink);
+  }
+  .flip-front .tap-hint {
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--color-link); flex-shrink: 0; white-space: nowrap;
+  }
+  .flip-back {
+    background: var(--color-header-start); color: #f4ead9;
+    transform: rotateY(180deg); border-left: 4px solid var(--color-stat);
+  }
+  .flip-back p { margin: 0; font-size: 0.92rem; line-height: 1.45; }
+  .beginners-more { display: inline-block; margin-top: 20px; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.04em; }
+  @media (max-width: 600px) {
+    .flip-tile { height: 128px; }
+    .flip-face { padding: 16px 20px; align-items: flex-start; }
+    .flip-front { flex-direction: column; justify-content: center; gap: 6px; }
+  }
+
+  table.data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+  table.data-table th { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-ink-soft); text-align: left; padding: 8px 12px; border-bottom: 2px solid var(--color-border); }
+  table.data-table td { padding: 10px 12px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  table.data-table td.amt { font-family: var(--font-mono); font-weight: 600; color: var(--color-stat); white-space: nowrap; }
+  table.data-table tr.highlight td { background: #fbf0dd; }
+
+  details.sourcing { background: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: 3px; padding: 18px 24px; margin: 40px 0; }
+  details.sourcing summary { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-header-start); cursor: pointer; outline-offset: 4px; }
+  details.sourcing[open] summary { margin-bottom: 14px; }
+  details.sourcing ul { margin: 0; padding-left: 20px; font-size: 0.92rem; color: var(--color-ink-soft); }
+  details.sourcing li { margin-bottom: 8px; }
+
+  footer { padding: 40px 0 60px; text-align: center; }
+  footer .fine { font-family: var(--font-mono); font-size: 12px; color: var(--color-ink-soft); letter-spacing: 0.03em; }
+  footer .star { color: var(--color-stat); }
+
+  @media (max-width: 600px) {
+    body { font-size: 16.5px; }
+    table.data-table { font-size: 0.85rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<div class="header-band">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="dot">⬡</span> The Weber County Hive</a>
+    <nav>
+      <a href="index.html">Docket</a>
+      <a href="https://webercountyhive.substack.com" target="_blank" rel="noopener">Substack</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="case-hero">
+    <div class="kicker">Salt Lake County Council · District 2 · Elected Nov. 2024</div>
+    <h1>Carlos Moreno</h1>
+    <p class="dek">A county councilman with an advisory board seat on Path Forward Utah — the Ogden nonprofit network already documented for its Utah State Board of Education ties — and a campaign donor list that reads like a who's who of state Republican politics: a member of Congress and his committee, the House Speaker's family, two sitting state representatives, a Cox administration appointee, and the county's own council chair.</p>
+    <div class="case-meta">
+      <span>Office: <b>Salt Lake County Council, District 2</b></span>
+      <span>Party: <b>Republican</b></span>
+      <span>Took office: <b>January 2025</b></span>
+    </div>
+  </div>
+
+  <div class="beginners-wrap">
+    <div class="beginners-heading">New to this?</div>
+    <p class="beginners-sub">A few terms this page uses &mdash; tap a tile to flip it.</p>
+    <div class="flip-grid">
+
+      <div class="flip-tile" tabindex="0" role="button" aria-label="Flip to see definition of Advisory board">
+        <div class="flip-tile-inner">
+          <div class="flip-face flip-front">
+            <div class="term">Advisory board</div>
+            <div class="tap-hint">Tap to flip</div>
+          </div>
+          <div class="flip-face flip-back">
+            <p>A group of people a nonprofit lists as supporters or informal advisors. It's usually a lighter role than being a director or officer &mdash; advisory board members typically don't vote on the organization's decisions or file paperwork on its behalf.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-tile" tabindex="0" role="button" aria-label="Flip to see definition of Nonprofit corporation">
+        <div class="flip-tile-inner">
+          <div class="flip-face flip-front">
+            <div class="term">Nonprofit corporation</div>
+            <div class="tap-hint">Tap to flip</div>
+          </div>
+          <div class="flip-face flip-back">
+            <p>A formally registered organization, filed with the state, that isn't set up to make money for owners. Utah's registry (the Division of Corporations) is public and shows who founded it, who runs it, and its registered address.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-tile" tabindex="0" role="button" aria-label="Flip to see definition of Campaign finance disclosure report">
+        <div class="flip-tile-inner">
+          <div class="flip-face flip-front">
+            <div class="term">Campaign finance disclosure report</div>
+            <div class="tap-hint">Tap to flip</div>
+          </div>
+          <div class="flip-face flip-back">
+            <p>A form every candidate for county or state office has to file, listing exactly who gave money to their campaign, how much, and what the campaign spent it on. These are public record.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-tile" tabindex="0" role="button" aria-label="Flip to see definition of Director vs officer vs advisory board">
+        <div class="flip-tile-inner">
+          <div class="flip-face flip-front">
+            <div class="term">Director vs. officer vs. advisory board</div>
+            <div class="tap-hint">Tap to flip</div>
+          </div>
+          <div class="flip-face flip-back">
+            <p>Directors and officers (like President or Treasurer) are legally responsible for a nonprofit's decisions and finances. Advisory board members generally aren't &mdash; they lend a name and reputation, but accountability sits with the directors.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a class="beginners-more" href="https://weber-county-hive.github.io/politics-for-begginers/" target="_blank" rel="noopener">More plain-language explainers &rarr;</a>
+  </div>
+
+  <div class="verdict-box">
+    <span class="label">What the records show</span>
+    <p>Carlos Moreno is listed as an Advisory Board Member on both Path Forward Utah's and Hope of Utah's public team pages &mdash; the same Ogden-based nonprofit network already documented in connection with USBE District 2 member Joseph Kerry. Corporate filings independently confirm Moreno as a current director of a third, related nonprofit, Path For Utah, alongside another Path Forward Utah advisory board member.</p>
+    <p>Across four campaign finance reports covering his 2024 election, Moreno's donors include Rep. Burgess Owens and his own campaign committee, House Speaker Mike Schultz and his wife Melissa (roughly $18,000 combined), two sitting Utah House members, Salt Lake County Council Chair Aimee Winder Newton, Riverton Mayor Trent Staggs, a 2024 Attorney General candidate, and a Governor Cox administration appointee.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat"><span class="num">$112.2K</span><span class="lbl">Total raised, 2024 cycle</span></div>
+    <div class="stat"><span class="num">$18K</span><span class="lbl">From the Schultz family alone</span></div>
+    <div class="stat"><span class="num">3</span><span class="lbl">Nonprofits at one Ogden address, tied to Moreno or fellow board members</span></div>
+    <div class="stat"><span class="num">2</span><span class="lbl">Sitting state legislators among his donors</span></div>
+  </div>
+
+  <!-- ============ SECTION: WHO HE IS ============ -->
+  <section class="sect" id="who">
+    <h2 class="sect-title"><span class="n">01</span> Who he is</h2>
+    <p>Carlos A. Moreno is a Venezuelan-born political asylee who immigrated to the United States in December 2009 as an international student. He earned a law degree from Rafael Urdaneta University in Venezuela and, after arriving in Utah, associate degrees from Salt Lake Community College in Political Science/Government and Homeland Security &amp; Emergency Management &mdash; becoming SLCC's first Latino and first immigrant student body president.</p>
+    <p>He founded New Leaders for America (also referred to as "New Leaders of America" on Path Forward Utah's site), a civic-engagement organization, around 2021&ndash;2023, and was named a "Distinguished Leader of Utah" by Utah Business Magazine in 2023. He was elected to the Salt Lake County Council, District 2 &mdash; covering West Valley City, South Jordan, Kearns, Magna, Copperton, and parts of West Jordan and Herriman &mdash; in November 2024, and took office in January 2025. He is married to Norbelys Moreno; they have three sons.</p>
+    <p>Moreno told the Deseret News in a September 2019 profile that his activism began as a Venezuelan international student, after the Venezuelan government's currency controls left thousands of students abroad &mdash; including roughly 220 in Utah &mdash; unable to access money for tuition or living expenses. He organized fellow students into an activist group, Venezuelan Students Abroad, and reached out to the United Nations and the White House. Moreno said that activism led Venezuelan officials to publicly accuse him of treason and conspiracy, and that he and his wife received political asylum with the assistance of then-Sen. Orrin Hatch and then-Rep. Chris Stewart, R-Utah. By 2019, years before Path Forward Utah's founding, Moreno was already publicly describing a goal of helping immigrant and Latino Utahns understand and engage with American government.</p>
+  </section>
+
+  <!-- ============ SECTION: THE BOARD SEAT ============ -->
+  <section class="sect" id="board">
+    <h2 class="sect-title"><span class="n">02</span> The board seat</h2>
+    <p>Moreno is listed as an Advisory Board Member on the public team pages of both Path Forward Utah and Hope of Utah &mdash; two Ogden nonprofits, headquartered at the same Grant Avenue address, with overlapping leadership already documented in connection with USBE District 2 member Joseph Kerry. Kerry was Path Forward Utah's chair through 2025 before being listed as an inactive director on August 24, 2026, two days before he co-hosted an education-policy event with Rep. Burgess Owens under the Path Forward Utah and Path For Utah banners.</p>
+    <p>Utah Division of Corporations records independently confirm a third nonprofit in this cluster: Path For Utah, incorporated February 3, 2026 at the same Grant Avenue address. Its current directors are Jamie Renda, Ignacio Valdez, and Jason Coates. Valdez is separately listed as a Path Forward Utah advisory board member &mdash; making him, alongside Moreno, a second confirmed name spanning more than one organization in this network.</p>
+    <div class="flag-open">
+      <span class="fo-label">Not established</span>
+      <p>No financial or organizational connection between Moreno's Salt Lake County Council campaign and Path Forward Utah, Hope of Utah, or Path For Utah has been documented. His donor list contains no contributions from Renda, Kerry, Wadman, or any variant of the three nonprofits' names. The board seat and the donor network below are two separate, parallel threads &mdash; not shown to intersect.</p>
+    </div>
+
+    <h3 class="sub-title">A separate advisory role, and what it doesn't establish</h3>
+    <p>Moreno also sits on the Victims of Communism Memorial Foundation's Advisory Council, a Washington, D.C.-based nonprofit that develops school curriculum and teacher-training materials on the history of communism, separate from his Path Forward Utah role. The two organizations share no documented connection to each other. The table below lays out exactly what's confirmed and what it does not show:</p>
+    <table class="data-table">
+      <tr><th>Independently documented fact</th><th>What it does not establish</th></tr>
+      <tr><td>Moreno serves on the Victims of Communism Foundation's advisory council</td><td>The foundation's involvement in Path Forward Utah</td></tr>
+      <tr><td>Moreno appears on Path Forward Utah's advisory board</td><td>Coordination between his two advisory roles</td></tr>
+      <tr><td>Path Forward Utah co-hosted the Aug. 26, 2026 Ogden education event</td><td>The foundation's participation in or knowledge of that event</td></tr>
+      <tr><td>Rep. Burgess Owens appeared at the event</td><td>Any committee or legislative coordination tied to the event</td></tr>
+      <tr><td>Owens is Vice Chair of the House Committee on Education and Workforce and chairs its Higher Education and Workforce Development Subcommittee</td><td>That the Ogden event targeted either committee</td></tr>
+    </table>
+    <p>Moreno holds separate advisory roles with Path Forward Utah and the Victims of Communism Memorial Foundation. The available records do not show the foundation participated in, funded, or knew about Path Forward Utah's Ogden event, and do not establish any connection between Moreno's two advisory positions. What the record shows is overlapping subject matter and one person holding separate roles &mdash; nothing more, absent evidence of communication, funding, or shared planning between the two organizations.</p>
+  </section>
+
+  <!-- ============ SECTION: THE DONOR NETWORK ============ -->
+  <section class="sect" id="donors">
+    <h2 class="sect-title"><span class="n">03</span> The donor network</h2>
+    <p>Moreno's Salt Lake County Financial Disclosure Reports &mdash; four interim filings covering January through October 2024, plus a dormant year-end report &mdash; show roughly $112,200 raised over the full election cycle. Several donors are sitting or prominent Utah political figures:</p>
+
+    <h3 class="sub-title">Where the money came from</h3>
+    <div class="fund-donut-wrap">
+      <div class="fund-donut" style="background: conic-gradient(var(--color-header-start) 0% 39.7%, var(--color-link) 39.7% 60.7%, var(--color-stat) 60.7% 100%);">
+        <div class="fund-donut-center">$112.2K<br>TOTAL</div>
+      </div>
+      <div class="fund-donut-legend">
+        <div class="fund-donut-legend-row"><span class="fund-donut-swatch" style="background: var(--color-header-start);"></span><span class="fund-donut-legend-amt">~40%</span> <span class="fund-donut-legend-lbl">Political &mdash; officeholders, their committees, PACs &amp; party orgs</span></div>
+        <div class="fund-donut-legend-sub">$44,555 &mdash; e.g. the Schultz family, sitting legislators, county/party committees</div>
+        <div class="fund-donut-legend-row" style="margin-top:14px;"><span class="fund-donut-swatch" style="background: var(--color-link);"></span><span class="fund-donut-legend-amt">~21%</span> <span class="fund-donut-legend-lbl">Businesses &amp; companies giving directly</span></div>
+        <div class="fund-donut-legend-sub">$23,557 &mdash; LLCs, corporations, and named businesses as the donor of record</div>
+        <div class="fund-donut-legend-row" style="margin-top:14px;"><span class="fund-donut-swatch" style="background: var(--color-stat);"></span><span class="fund-donut-legend-amt">~39%</span> <span class="fund-donut-legend-lbl">Individuals giving personally</span></div>
+        <div class="fund-donut-legend-sub">$44,118 &mdash; named people not identified as current officeholders or political appointees</div>
+      </div>
+    </div>
+    <p style="font-size:0.88rem;color:var(--color-ink-soft);">This breakdown classifies every itemized donor across all four reports. "Political" includes campaign committees, PACs, and party organizations, plus personal donations from people independently confirmed as sitting or former officeholders or political appointees (e.g. the Schultz family, Rep. MacPherson, Riverton Mayor Trent Staggs). "Businesses" are donations where a company or LLC is itself the donor of record. Everyone else &mdash; the large majority of individual line items, mostly smaller personal contributions &mdash; falls under "Individuals," which has not been researched name-by-name beyond what's documented elsewhere on this page.</p>
+
+    <div class="record-card">
+      <div class="rc-head"><span class="rc-name">House Speaker Mike Schultz &amp; Melissa Schultz</span><span class="rc-amount">$18,000</span></div>
+      <p>Three separate contributions across the cycle &mdash; "Elect Mike Schultz" ($6,000), Melissa Schultz ($6,000), and Michael Schultz ($6,000, confirmed as the Speaker) &mdash; making the Schultz family Moreno's largest single donor relationship by a wide margin.</p>
+      <span class="rc-tag">Largest Donor</span>
+    </div>
+
+    <div class="record-card">
+      <div class="rc-head"><span class="rc-name">Rep. Burgess Owens</span><span class="rc-amount">$500</span></div>
+      <p>A direct contribution from Owens's own committee, "Burgess 4 Utah." Separately, Moreno's own LinkedIn documents a personal relationship &mdash; Owens has presented him with Congressional Recognition and a community-service flag.</p>
+      <span class="rc-tag">Member of Congress</span>
+    </div>
+
+    <div class="record-card">
+      <div class="rc-head"><span class="rc-name">Aimee Winder Newton</span><span class="rc-amount">$500</span></div>
+      <p>Current Salt Lake County Council Chair &mdash; a sitting colleague of Moreno's on the same council.</p>
+      <span class="rc-tag">Council Chair</span>
+    </div>
+
+    <div class="record-card">
+      <div class="rc-head"><span class="rc-name">Rep. Matt MacPherson &amp; Rep. Jordan Teuscher</span><span class="rc-amount">$3,300 / $200</span></div>
+      <p>Two sitting Utah House members. MacPherson (District 26) gave $3,000 plus a later $300; Teuscher (District 44, listed as "Attorney") gave $200.</p>
+      <span class="rc-tag">State Legislators</span>
+    </div>
+
+    <div class="record-card">
+      <div class="rc-head"><span class="rc-name">Brad Bonham</span><span class="rc-amount">~$3,993</span></div>
+      <p>Named by Gov. Spencer Cox in January 2023 as the Governor's Office of Economic Opportunity's first Entrepreneur-in-Residence. A repeat Moreno donor across three separate reports.</p>
+      <span class="rc-tag">Cox Administration</span>
+    </div>
+
+    <div class="record-card">
+      <div class="rc-head"><span class="rc-name">Rachel Terry</span><span class="rc-amount">~$564</span></div>
+      <p>Director of the Utah Division of State Risk Management since January 2023; the first Republican woman to run for Utah Attorney General (2024), advancing to the GOP primary before losing to Derek Brown. Previously an Assistant Attorney General and a litigator for the Utah State Board of Education.</p>
+      <span class="rc-tag">2024 AG Candidate</span>
+    </div>
+
+    <div class="record-card">
+      <div class="rc-head"><span class="rc-name">Trent Staggs</span><span class="rc-amount">$476.45</span></div>
+      <p>Riverton City Mayor and 2024 U.S. Senate primary candidate.</p>
+      <span class="rc-tag">Sitting Mayor</span>
+    </div>
+
+    <h3 class="sub-title">Other legislative and PAC contributions</h3>
+    <table class="data-table">
+      <tr><th>Donor</th><th>Notes</th><th>Amount</th></tr>
+      <tr><td>Salt Lake County Republican Party</td><td>Direct party committee gift</td><td class="amt">$6,000</td></tr>
+      <tr><td>Salt Lake Board of Realtors PAC</td><td>Two separate $3,000 gifts</td><td class="amt">$6,000</td></tr>
+      <tr><td>Sen. Karianne Lisonbee</td><td>Sponsored the Hope of Utah state appropriation</td><td class="amt">$500</td></tr>
+      <tr><td>Rep. Candice Pierucci's committee</td><td>Contribution from her own committee to Moreno</td><td class="amt">$312.65</td></tr>
+      <tr><td>Sen. Daniel McCay</td><td>Across two reports</td><td class="amt">$700</td></tr>
+      <tr><td>Douglas Fiefia (personal) &amp; Fiefia for Utah</td><td>Reciprocal &mdash; Moreno also donated to Fiefia's campaign twice</td><td class="amt">$1,306.56 combined flow</td></tr>
+    </table>
+    <p style="font-size:0.9rem;color:var(--color-ink-soft);">Full itemized donor and expenditure ledgers across all four reports are maintained separately and available on request.</p>
+  </section>
+
+  <!-- ============ SECTION: THE TIP THAT STARTED THIS ============ -->
+  <section class="sect" id="origin">
+    <h2 class="sect-title"><span class="n">04</span> How this file started</h2>
+    <p>Moreno's name surfaced as a Path Forward Utah advisory board member while reviewing that organization's own team page during the Kerry investigation. His Salt Lake County Council seat, and the extent of his donor network, were confirmed independently and separately from any tip &mdash; via Wikipedia, Axios, his own official county bio and social media, and his four Salt Lake County Financial Disclosure Reports.</p>
+  </section>
+
+  <details class="sourcing">
+    <summary>Sourcing &amp; methodology</summary>
+    <ul>
+      <li>Salt Lake County Council roster: Wikipedia, Axios, saltlakecounty.gov official bio</li>
+      <li>Origin-story background: "How a Utah college student from Venezuela became an activist against socialism," Deseret News, Sept. 15, 2019</li>
+      <li>Path Forward Utah / Hope of Utah team pages (organizations' own websites)</li>
+      <li>Path For Utah corporate record: Utah Division of Corporations, Entity #14657396-0140</li>
+      <li>Moreno's four 2024 Salt Lake County Financial Disclosure Reports (interim x4, all amended August 2025), plus year-end report filed 2/1/2026</li>
+      <li>Brad Bonham GOEO appointment: Governor's Office press release, Jan. 12, 2023</li>
+      <li>Rachel Terry background: Ballotpedia, Deseret News, KUER, Utah Division of Risk Management staff page</li>
+      <li>Matt MacPherson, Jordan Teuscher: Utah House of Representatives official records, Ballotpedia</li>
+      <li>Trent Staggs: 2024 Utah U.S. Senate primary results</li>
+    </ul>
+  </details>
+
+  <footer>
+    <p class="fine"><span class="star">&#9733;</span> We report public records. You decide. <span class="star">&#9733;</span></p>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.flip-tile').forEach(tile => {
+    tile.addEventListener('click', () => tile.classList.toggle('flipped'));
+    tile.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        tile.classList.toggle('flipped');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
